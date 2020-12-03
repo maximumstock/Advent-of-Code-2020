@@ -61,7 +61,7 @@ fn read_input() -> Vec<PasswordRule> {
 }
 
 #[cfg(test)]
-mod test {
+mod day_02 {
     use crate::{part1, part2};
 
     #[test]

@@ -46,7 +46,7 @@ fn read_input() -> Vec<i32> {
 }
 
 #[cfg(test)]
-mod test {
+mod day_01 {
     use crate::{part1, part2};
 
     #[test]
