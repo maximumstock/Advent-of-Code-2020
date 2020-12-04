@@ -1,20 +1,24 @@
 fn main() {
-    let result = part1().expect("Error in part 1");
+    let input = parse_input();
+
+    let result = part1(&input).expect("Error in part 1");
     println!("Part 1: {}", result);
 
-    let result = part2().expect("Error in part 2");
+    let result = part2(&input).expect("Error in part 2");
     println!("Part 2: {}", result);
 }
 
-fn part1() -> Result<(), ()> {
+type Input = Vec<()>;
+
+fn part1(input: &Input) -> Result<(), ()> {
     Ok(())
 }
 
-fn part2() -> Result<(), ()> {
+fn part2(input: &Input) -> Result<(), ()> {
     Ok(())
 }
 
-fn read_input() -> Vec<()> {
+fn parse_input() -> Input {
     include_str!("../input.txt").lines().collect::<Vec<_>>()
 }
 
