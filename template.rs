@@ -1,5 +1,5 @@
 fn main() {
-    let input = parse_input();
+    let input = include_str!("../input.txt");
 
     let result = part1(&input).expect("Error in part 1");
     println!("Part 1: {}", result);
@@ -8,18 +8,12 @@ fn main() {
     println!("Part 2: {}", result);
 }
 
-type Input = Vec<()>;
-
-fn part1(input: &Input) -> Result<(), ()> {
+fn part1(input: &str) -> Result<(), ()> {
     Ok(())
 }
 
-fn part2(input: &Input) -> Result<(), ()> {
+fn part2(input: &str) -> Result<(), ()> {
     Ok(())
-}
-
-fn parse_input() -> Input {
-    include_str!("../input.txt").lines().collect::<Vec<_>>()
 }
 
 #[cfg(test)]
