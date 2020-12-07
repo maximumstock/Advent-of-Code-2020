@@ -10,34 +10,28 @@ fn main() {
 }
 
 fn part1(input: &str) -> Result<usize, ()> {
-    Ok(input.lines().map(parse_seat_id).map(|x| x.2).max().unwrap())
+    Ok(input.lines().map(parse_seat_id).max().unwrap())
 }
 
 fn part2(input: &str) -> Result<usize, ()> {
-    let seat_ids = input
-        .lines()
-        .map(parse_seat_id)
-        .collect::<HashSet<(usize, usize, usize)>>();
+    let seat_ids = input.lines().map(parse_seat_id).collect::<HashSet<usize>>();
 
-    let min_id = seat_ids.iter().map(|x| x.2).min().unwrap();
-    let max_id = seat_ids.iter().map(|x| x.2).max().unwrap();
+    let min_id = seat_ids.iter().min().unwrap();
+    let max_id = seat_ids.iter().max().unwrap();
 
-    for row in 1..=126 {
-        for col in 0..7 {
-            let id = row * 8 + col;
-            if id < min_id || id > max_id {
-                continue;
-            }
-            if !seat_ids.contains(&(row, col, id)) {
-                return Ok(id);
-            }
+    for id in 8..=(1016) {
+        if id < *min_id || id > *max_id {
+            continue;
+        }
+        if !seat_ids.contains(&id) {
+            return Ok(id);
         }
     }
 
     Err(())
 }
 
-fn parse_seat_id(input: &str) -> (usize, usize, usize) {
+fn parse_seat_id(input: &str) -> usize {
     let raw_binary = input
         .chars()
         .map(|c| match c {
@@ -47,10 +41,7 @@ fn parse_seat_id(input: &str) -> (usize, usize, usize) {
         })
         .collect::<String>();
 
-    let row = usize::from_str_radix(&raw_binary[..7], 2).unwrap();
-    let col = usize::from_str_radix(&raw_binary[7..], 2).unwrap();
-
-    (row, col, row * 8 + col)
+    usize::from_str_radix(&raw_binary, 2).unwrap()
 }
 
 #[cfg(test)]
@@ -59,7 +50,7 @@ mod test {
 
     #[test]
     fn test_parse_seat_id() {
-        assert_eq!(parse_seat_id("BFFFBBFRRR").2, 567);
+        assert_eq!(parse_seat_id("BFFFBBFRRR"), 567);
     }
 
     #[test]
