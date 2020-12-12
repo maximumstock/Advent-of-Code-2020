@@ -75,7 +75,7 @@ fn count_bags(graph: &HashMap<String, Vec<(u8, String)>>, colour: &str) -> usize
 }
 
 #[cfg(test)]
-mod test {
+mod day07_test {
     use crate::{part1, part2};
 
     #[test]

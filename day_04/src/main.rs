@@ -67,7 +67,7 @@ fn validate_passport(passport: &HashMap<&str, &str>) -> bool {
 }
 
 #[cfg(test)]
-mod test {
+mod day04_test {
     use crate::{part1, part2};
 
     #[test]

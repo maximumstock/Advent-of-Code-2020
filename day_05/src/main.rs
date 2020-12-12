@@ -45,7 +45,7 @@ fn parse_seat_id(input: &str) -> usize {
 }
 
 #[cfg(test)]
-mod test {
+mod day05_test {
     use crate::{parse_seat_id, part1, part2};
 
     #[test]

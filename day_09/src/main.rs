@@ -69,7 +69,7 @@ fn parse_input(input: &str) -> Vec<usize> {
 }
 
 #[cfg(test)]
-mod test {
+mod day09_test {
     use crate::{part1, part2};
 
     #[test]

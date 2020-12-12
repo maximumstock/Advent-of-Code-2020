@@ -47,7 +47,7 @@ fn read_input() -> Vec<String> {
 }
 
 #[cfg(test)]
-mod day_03 {
+mod day03_test {
     use crate::{part1, part2};
 
     #[test]

@@ -124,7 +124,7 @@ fn partx(mut map: HashMap<(isize, isize), char>, f: &Logic) -> Result<usize, ()>
 }
 
 #[cfg(test)]
-mod test {
+mod day11_test {
     use crate::{parse_input, part1, part2};
 
     #[test]

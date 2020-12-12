@@ -133,7 +133,7 @@ fn parse_input(input: &str) -> Memory {
 }
 
 #[cfg(test)]
-mod test {
+mod day08_test {
     use crate::{part1, part2};
 
     #[test]
