@@ -43,10 +43,6 @@ fn part2(input: &str) -> Result<usize, ()> {
             .iter()
             .enumerate()
             .filter(|(_, rule)| rule.field.contains("departure"))
-            .map(|idx| {
-                dbg!(idx.0);
-                idx
-            })
             .map(|(idx, _)| ticket[idx])
             .product()),
         Err(_) => Err(()),
