@@ -132,7 +132,7 @@ fn parse_input(input: &str, extend: bool) -> Ring {
 }
 
 #[cfg(test)]
-mod test {
+mod day23_test {
     use crate::{part1, part2};
 
     #[test]

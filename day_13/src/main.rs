@@ -36,7 +36,7 @@ fn part2() -> Result<usize, ()> {
 }
 
 #[cfg(test)]
-mod test {
+mod day13_test {
     use crate::{part1, part2};
 
     #[test]

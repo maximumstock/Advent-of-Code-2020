@@ -115,7 +115,7 @@ fn parse_input(input: &str) -> (Deck, Deck) {
 }
 
 #[cfg(test)]
-mod test {
+mod day22_test {
     use crate::{part1, part2};
 
     #[test]

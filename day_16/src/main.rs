@@ -147,7 +147,7 @@ fn parse_input(input: &str) -> (Vec<Rule>, Ticket, Vec<Ticket>) {
 }
 
 #[cfg(test)]
-mod test {
+mod day16_test {
     use crate::{
         filter_valid_tickets, find_valid_rule_arrangement, parse_input, part1, part2, Rule,
     };

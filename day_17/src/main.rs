@@ -109,7 +109,7 @@ impl Grid {
 }
 
 #[cfg(test)]
-mod test {
+mod da17_test {
     use crate::part1;
 
     #[test]

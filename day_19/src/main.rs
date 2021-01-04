@@ -132,7 +132,7 @@ fn parse_rule(input: &str) -> (usize, Rule) {
 }
 
 #[cfg(test)]
-mod test {
+mod day19_test {
     use crate::{part1, part2};
 
     #[test]
