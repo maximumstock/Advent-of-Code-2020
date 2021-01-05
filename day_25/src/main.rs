@@ -10,13 +10,7 @@ fn main() {
 }
 
 fn part1(pkey1: usize, pkey2: usize) -> Result<usize, ()> {
-    let loop_size_card = babystep_giantstep(7, 20201227, pkey1).unwrap();
     let loop_size_door = babystep_giantstep(7, 20201227, pkey2).unwrap();
-
-    let enc_key1 = mod_exp(pkey1, loop_size_door, 20201227);
-    let enc_key2 = mod_exp(pkey2, loop_size_card, 20201227);
-    assert_eq!(enc_key1, enc_key2);
-
     Ok(mod_exp(pkey1, loop_size_door, 20201227))
 }
 
@@ -37,8 +31,8 @@ fn babystep_giantstep(g: usize, r#mod: usize, h: usize) -> Option<usize> {
     e = h;
 
     for i in 0..m {
-        match table.iter().find(|(k, _)| k.eq(&&e)) {
-            Some((_, v)) => return Some(i * m + *v),
+        match table.get(&e) {
+            Some(v) => return Some(i * m + *v),
             None => {
                 e = (e * factor) % r#mod;
             }
